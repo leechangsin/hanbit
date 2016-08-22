@@ -17,27 +17,27 @@
 			<table border="1">
 				<tr>
 					<th>이름</th>
-					<td><input type="text" name="ab_name" maxlength="15"></td>
+					<td><input type="text" name="ad_name" maxlength="15"></td>
 				</tr>
 				<tr>
 					<th>email</th>
-					<td><input type="text" name="ab_email" maxlength="50"></td>
+					<td><input type="text" name="ad_email" maxlength="50"></td>
 				</tr>
 				<tr>
 					<th>전화번호</th>
-					<td><input type="text" name="ab_tel" maxlength="20"></td>
+					<td><input type="text" name="ad_tel" maxlength="20"></td>
 				</tr>
 				<tr>
 					<th>생일</th>
-					<td><input type="date" name="ab_birth"></td>
+					<td><input type="date" name="ad_birth"></td>
 				</tr>
 				<tr>
 					<th>회사</th>
-					<td><input type="text" name="ab_comdept" maxlength="20"></td>
+					<td><input type="text" name="ad_comdept" maxlength="20"></td>
 				</tr>
 				<tr>
 					<th>메모</th>
-					<td><input type="text" name="ab_memo"></td>
+					<td><input type="text" name="ad_memo"></td>
 				</tr>
 				<tr>
 					<td colspan=2 align=center>
