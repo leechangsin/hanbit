@@ -16,7 +16,7 @@
 				response.sendRedirect("addrbook_control.jsp?action=list");
 			else
 				throw new Exception("DB 입력 오류");
-		}
+		}//end if(action.equals("insert"))
 		else if(action.equals("edit")){
 			AddrBook abook = ad.getDB(addrbook.getAd_id());
 			if(!request.getParameter("upasswd").equals("1234"))
@@ -25,18 +25,21 @@
 				request.setAttribute("ad", abook);
 				pageContext.forward("addrbook_edit_form.jsp");
 			}
-		}
+		}//end if(action.equals("edit"))
 		else if(action.equals("update")){
-			
-		}
+			if(ad.updateDB(addrbook))
+				response.sendRedirect("addrbook_control.jsp?action=list");
+			else
+				throw new Exception("DB갱신 오류");
+		}//end if(action.equals("update"))
 		else if(action.equals("delete")){
 			if(ad.deleteDB(addrbook.getAd_id())){
 				response.sendRedirect("addrbook_control.jsp?action=list");
 			}
 			else
 				throw new Exception("DB삭제 오류");
-		}
+		}//end if(action.equals("delete"))
 		else{
-			
+			response.sendRedirect("addrbook_control.jsp?action=list");
 		}
 	%>
