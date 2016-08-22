@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" errorPage="addrbook_error.jsp" import="addrbook.*"%>
+    pageEncoding="UTF-8" errorPage="addrbook_error.jsp" import="addrbook.*, java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="ad" scope="page" class="addrbook.AddrBean"/>
@@ -8,8 +8,11 @@
 </jsp:useBean>
 	<%
 		String action = request.getParameter("action");
+	
 		if(action.equals("list")){
-			
+			ArrayList<AddrBook> datas = ad.getDBList();
+			request.setAttribute("datas", datas);
+			pageContext.forward("addrbook_list.jsp");
 		}
 		else if(action.equals("insert")){
 			if(ad.insertDB(addrbook))

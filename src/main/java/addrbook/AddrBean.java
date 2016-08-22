@@ -152,8 +152,8 @@ public class AddrBean {
 
 		ArrayList<AddrBook> datas = new ArrayList<>();
 
-		String sql = "select * from addrbook order by ad_id dessc";
-
+		String sql = "select * from addrbook order by ad_id desc";
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
